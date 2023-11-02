@@ -7,7 +7,7 @@ const Login = (req, res) => {
 
   User.findOne({ email: userLoggingIn.email }).then((dbUser) => {
     if (!dbUser) {
-      return res.status(400).send({ message: "No Account Found with this Email" });
+      return res.status(400).json({ message: "No Account Found with this Email" });
     }
 
     // Compare the password using bcrypt
